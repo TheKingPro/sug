@@ -17,7 +17,7 @@ client.on('message', message => {
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setTitle(``)
     .setFooter(`Select a reaction below to vote on suggestion`)
-    .setColor('#ff0000')
+    .setColor('#00FF00')
     .setDescription(args.join(" "));
     channel.send(embed).then(msg => {
       msg.react("✅").then(() => msg.react("❌"));
