@@ -14,7 +14,7 @@ client.on('message', message => {
     if(!args.join(" ")) return message.channel.send(`**يرجي كتابة الاقتراح **`);
     let channel = message.guild.channels.find(c => c.name == "suggestions");
     let embed = new Discord.RichEmbed()
-    .setFooter(' 🔔 اقــــــتـــراح جـــــديــــــد 🔔 `)
+    .setFooter(' 🔔 اقتراح جديد 🔔 `)
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setTitle(``)
     .setFooter(`Select a reaction below to vote on suggestion`)
