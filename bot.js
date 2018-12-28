@@ -10,14 +10,15 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
   if(!message.content.toLowerCase().startsWith(prefix)) return;
-  if(command == "sugg") {
+  if(command == "sug") {
     if(!args.join(" ")) return message.channel.send(`**يرجي كتابة الاقتراح **`);
     let channel = message.guild.channels.find(c => c.name == "suggestions");
     let embed = new Discord.RichEmbed()
-    .setFooter(` 🔔 اقــــــتـــراح جـــــديــــــد 🔔 `)
+    .addField(' 🔔 اقــــــتـــراح جـــــديــــــد 🔔 `)
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setTitle(``)
     .setFooter(`Select a reaction below to vote on suggestion`)
+    .setColor('#ff0000')   c          
     .setDescription(args.join(" "));
     channel.send(embed).then(msg => {
       msg.react("✅").then(() => msg.react("❌"));
