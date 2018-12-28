@@ -18,12 +18,11 @@ client.on('message', message => {
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setTitle(``)
     .setFooter(`Select a reaction below to vote on suggestion`)
-    .setColor('#ff0000')   c          
     .setDescription(args.join(" "));
     channel.send(embed).then(msg => {
       msg.react("✅").then(() => msg.react("❌"));
       message.delete()
-      message.channel.send(`**تم ارسال اقتراحك ✅ **`);
+      message.channel.send(`**يرجي كتابة اقتراح لكي يتم ارساله الي روم الاقتراحات ❎ **`);
     });
   }
 });
